@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.hubertpa.sidepa.sidepa.model.Demande;
 import com.hubertpa.sidepa.sidepa.model.dto.DemandeCourtDTO;
+import com.hubertpa.sidepa.sidepa.model.dto.DemandeDetailDTO;
 import com.hubertpa.sidepa.sidepa.repository.DemandeRepository;
 
 @Service
@@ -21,8 +22,13 @@ public class DemandeService {
 		return StreamSupport.stream(demandeRepository.findAll().spliterator(), false).toList();
 	}
 
-	public Optional<Demande> recuperationDemandeDepuisID(Long id) {
-		return demandeRepository.findById(id);
+	public Demande recuperationDemandeDepuisID(Long id) {
+		DemandeDetailDTO demandeDetailDTO = null;
+		Optional<Demande> demandeOPT = demandeRepository.findById(id);
+
+		if (demandeOPT.isPresent()) {
+		}
+		return demandeOPT.get();
 	}
 
 	public List<DemandeCourtDTO> recuperationDesDemandesSimple() {

@@ -1,7 +1,6 @@
 package com.hubertpa.sidepa.sidepa.controller.routing;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +17,6 @@ import com.hubertpa.sidepa.sidepa.service.DemandeService;
 
 @RestController
 @RequestMapping("/data/demande/")
-//@CrossOrigin(origins = "http://localhost:4200")
 public class DemandeController {
 
 	Logger logger = LoggerFactory.getLogger(getClass());
@@ -40,7 +38,7 @@ public class DemandeController {
 	}
 
 	@GetMapping(path = "parId")
-	Optional<Demande> recuperationDemande(@RequestParam Long id) {
+	Demande recuperationDemande(@RequestParam Long id) {
 		return demandeService.recuperationDemandeDepuisID(id);
 
 	}
