@@ -1,9 +1,9 @@
-package com.hubertpa.sidepa.sidepa.model.dto;
+package com.hubertpa.sidepa.model.dto;
 
 import java.io.Serializable;
 
-import com.hubertpa.sidepa.sidepa.model.Demande;
-import com.hubertpa.sidepa.sidepa.model.Workflow;
+import com.hubertpa.sidepa.model.Demande;
+import com.hubertpa.sidepa.model.Workflow;
 
 import lombok.Data;
 
@@ -15,12 +15,14 @@ public class DemandeCourtDTO implements Serializable {
 	String iban;
 	String nomTiers;
 	String dernierStatus;
+	String service;
 
 	DemandeCourtDTO(Demande demande) {
 		this.id = demande.getId();
 		this.iban = demande.getIban();
 		this.nomTiers = demande.getTiers().getNomOuRaisonSocial();
 		this.description = demande.getDescription();
+		this.service = (null != demande.getService()) ? demande.getService().getPath() : "";
 	}
 
 	public static DemandeCourtDTO convertToDTO(Demande demande) {

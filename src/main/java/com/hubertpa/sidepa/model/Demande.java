@@ -1,4 +1,4 @@
-package com.hubertpa.sidepa.sidepa.model;
+package com.hubertpa.sidepa.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +31,9 @@ public class Demande {
 
 	private String iban;
 	private String codeIban;
+
+	@ManyToOne
+	private Service service;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Tiers tiers;

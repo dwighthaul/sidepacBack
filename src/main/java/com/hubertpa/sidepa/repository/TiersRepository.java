@@ -1,10 +1,10 @@
-package com.hubertpa.sidepa.sidepa.repository;
+package com.hubertpa.sidepa.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.hubertpa.sidepa.sidepa.model.Tiers;
+import com.hubertpa.sidepa.model.Tiers;
 
 public interface TiersRepository extends CrudRepository<Tiers, Long> {
 

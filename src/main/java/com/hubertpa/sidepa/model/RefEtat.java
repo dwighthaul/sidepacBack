@@ -1,4 +1,4 @@
-package com.hubertpa.sidepa.sidepa.model;
+package com.hubertpa.sidepa.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

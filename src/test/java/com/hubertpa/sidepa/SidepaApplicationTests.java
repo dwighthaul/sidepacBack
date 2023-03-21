@@ -1,4 +1,4 @@
-package com.hubertpa.sidepa.sidepa;
+package com.hubertpa.sidepa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

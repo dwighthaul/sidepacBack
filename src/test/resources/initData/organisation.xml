@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups>
+	<group>
+		<code>ENTREPRISE</code>
+		<libelle>Entreprise mère</libelle>
+		<path>/ENTREPRISE</path>
+	</group>
+	<group>
+		<code>RH</code>
+		<libelle>Resources humaines</libelle>
+		<path>/ENTREPRISE/RH</path>
+	</group>
+	<group>
+		<code>VENTES</code>
+		<libelle>Ventes</libelle>
+		<path>/ENTREPRISE/VENTES</path>
+	</group>
+	<group>
+		<code>PRODUCTION</code>
+		<libelle>Production</libelle>
+		<path>/ENTREPRISE/PRODUCTION</path>
+	</group>
+	<group>
+		<code>DEV</code>
+		<libelle>Développement</libelle>
+		<path>/ENTREPRISE/PRODUCTION/DEV</path>
+	</group>
+	<group>
+		<code>JAVA</code>
+		<libelle>Développement JAVA</libelle>
+		<path>/ENTREPRISE/PRODUCTION/DEV/JAVA</path>
+	</group>
+	<group>
+		<code>NET</code>
+		<libelle>Développement .NET</libelle>
+		<path>/ENTREPRISE/PRODUCTION/DEV/NET</path>
+	</group>
+	<group>
+		<code>R&amp;D</code>
+		<libelle>Développement</libelle>
+		<path>/ENTREPRISE/PRODUCTION/R&amp;D</path>
+	</group>
+	<group>
+		<code>JAVA</code>
+		<libelle>Recherche et développement JAVA</libelle>
+		<path>/ENTREPRISE/PRODUCTION/R&amp;D/JAVA</path>
+	</group>
+	<group>
+		<code>NET</code>
+		<libelle>Développement .NET</libelle>
+		<path>/ENTREPRISE/PRODUCTION/R&amp;D/NET</path>
+	</group>
+</groups>

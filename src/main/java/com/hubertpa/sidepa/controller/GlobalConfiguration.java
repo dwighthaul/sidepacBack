@@ -1,4 +1,4 @@
-package com.hubertpa.sidepa.sidepa.controller;
+package com.hubertpa.sidepa.controller;
 
 import org.springframework.context.annotation.Configuration;
 

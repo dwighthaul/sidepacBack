@@ -1,11 +1,11 @@
-package com.hubertpa.sidepa.sidepa;
+package com.hubertpa.sidepa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.hubertpa.sidepa.sidepa.controller.initialize.DataInitializer;
+import com.hubertpa.sidepa.controller.initialize.DataInitializer;
 
 @SpringBootApplication
 public class SidepaApplication implements CommandLineRunner {
