@@ -1,5 +1,6 @@
 package com.hubertpa.sidepa.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +22,7 @@ public class Tiers {
 	private Long id;
 
 	@NonNull
+	@Column(unique = true)
 	private String numeroTiers;
 	@NonNull
 	private String nomOuRaisonSocial;

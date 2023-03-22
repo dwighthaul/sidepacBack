@@ -35,7 +35,7 @@ public class Demande {
 	@ManyToOne
 	private Service service;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Tiers tiers;
 
 	@OneToMany(cascade = CascadeType.ALL)

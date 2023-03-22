@@ -15,6 +15,7 @@ public class DemandeCourtDTO implements Serializable {
 	String iban;
 	String nomTiers;
 	String dernierStatus;
+	String dernierStatusCode;
 	String service;
 
 	DemandeCourtDTO(Demande demande) {
@@ -29,16 +30,19 @@ public class DemandeCourtDTO implements Serializable {
 		DemandeCourtDTO demandeDTO = new DemandeCourtDTO(demande);
 
 		String dernierStatus = "";
+		String dernierStatusCode = "";
 
 		if (null != demande.getWf() && demande.getWf().size() > 0) {
 			Workflow wf = demande.getWf().get(demande.getWf().size() - 1);
 
 			if (null != wf) {
 				dernierStatus = wf.getEtat().getCode() + " - " + wf.getEtat().getLibelle();
+				dernierStatusCode = wf.getEtat().getCode();
 			}
-
 		}
+
 		demandeDTO.dernierStatus = dernierStatus;
+		demandeDTO.dernierStatusCode = dernierStatusCode;
 
 		return demandeDTO;
 	}

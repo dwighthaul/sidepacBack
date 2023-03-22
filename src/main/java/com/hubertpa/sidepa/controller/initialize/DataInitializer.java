@@ -37,21 +37,22 @@ public class DataInitializer {
 		referentielServiceInitializer.init();
 		initialisationReferentiels();
 
-		Tiers t1 = new Tiers("10123", "Hubert", "Paul", "Montreal", "1111", "0404");
-		Tiers t2 = new Tiers("20123", "Huang", "Stephy", "Montreal", "2222", "0404");
+		Tiers tiers1 = tiersRepository.findByNumeroTiers("12345678901").get();
+		Tiers tiers2 = tiersRepository.findByNumeroTiers("12345678902").get();
 
-		Demande demande = creationDemande("Description", "Info", t1, "C012", "FR7630001007941234567890185");
+		Demande demande = creationDemande("Description", "Info", tiers1, "C012", "FR7630001007941234567890185");
 		demande.setService(serviceRepository.findByPath("/ENTREPRISE/PRODUCTION/DEV/JAVA"));
-		Workflow wf = new Workflow(null, etatRepository.findByCode("CRE"), "Creation", LocalDate.now().minusDays(2));
-		Workflow esh = new Workflow(null, etatRepository.findByCode("ESH"), "Envoyé validation",
-				LocalDate.now().minusDays(1));
-		Workflow vsh = new Workflow(null, etatRepository.findByCode("VSH"), "Validé", LocalDate.now());
-		demande.getWf().add(wf);
-		demande.getWf().add(esh);
-		demande.getWf().add(vsh);
+		demande.getWf()
+				.add(new Workflow(null, etatRepository.findByCode("CRE"), "Creation", LocalDate.now().minusDays(2)));
+		demande.getWf().add(new Workflow(null, etatRepository.findByCode("ESH"), "Envoyé validation",
+				LocalDate.now().minusDays(1)));
+		demande.getWf().add(new Workflow(null, etatRepository.findByCode("VSH"), "Validé", LocalDate.now()));
 
-		Demande demande2 = creationDemande("Description - 2", "Info - 2", t2, "C012", "FR7630001007941234567890185");
+		Demande demande2 = creationDemande("Description - 2", "Info - 2", tiers2, "C012",
+				"FR7630001007941234567890185");
 		demande2.setService(serviceRepository.findByPath("/ENTREPRISE/PRODUCTION/DEV/NET"));
+		demande2.getWf()
+				.add(new Workflow(null, etatRepository.findByCode("CRE"), "Creation", LocalDate.now().minusDays(2)));
 
 		demandeRepository.save(demande);
 		demandeRepository.save(demande2);
@@ -71,9 +72,16 @@ public class DataInitializer {
 	}
 
 	private void initialisationReferentiels() {
-		etatRepository.save(new RefEtat(null, "CRE", "Creation"));
-		etatRepository.save(new RefEtat(null, "ESH", "Envoyé sup"));
-		etatRepository.save(new RefEtat(null, "VSH", "Validé sup"));
+		etatRepository.save(new RefEtat(null, "CRE", "Crée"));
+		etatRepository.save(new RefEtat(null, "ESH", "Envoyé supérieur hiérarchique"));
+		etatRepository.save(new RefEtat(null, "VSH", "Validé supérieur hiérarchique"));
+		etatRepository.save(new RefEtat(null, "PAY", "Payée"));
+
+		tiersRepository.save(new Tiers("12345678901", "Banque de France", "", "1 rue de la Vrillière 75001 PARIS",
+				"FR7630001007941234567890185", "30001"));
+		tiersRepository.save(new Tiers("12345678902", "Crédit Agricole‎", "",
+				"12, place des États-Unis 92127 Montrouge Cedex", "FR7630006000011234567890189", "30006"));
+
 	}
 
 }
