@@ -91,7 +91,7 @@
 					<outputFileType>implementationFile</outputFileType>
 					<mapClasses>asClasses</mapClasses>
 					<jsonLibrary>jackson2</jsonLibrary>
-					<classPatterns>com.hubertpa.sidepa.sidepa.model.*</classPatterns>
+					<classPatterns>com.hubertpa.sidepa.model.*</classPatterns>
 					<outputKind>module</outputKind>
 				</configuration>
 			</plugin>

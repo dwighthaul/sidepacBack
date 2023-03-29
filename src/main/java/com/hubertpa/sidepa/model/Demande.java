@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
@@ -31,6 +32,10 @@ public class Demande {
 
 	private String iban;
 	private String codeIban;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ligneFK")
+	private List<Ligne> lignes;
 
 	@ManyToOne
 	private Service service;

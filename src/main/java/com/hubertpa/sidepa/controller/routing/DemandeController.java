@@ -30,7 +30,6 @@ public class DemandeController {
 
 	@PostMapping(path = "update", consumes = "application/json")
 	void mettreAJourDemande(@RequestBody Demande demande, HttpServletRequest request) {
-		demande.setDescription("Toto");
 		logger.info(demande.toString());
 
 		demandeService.sauvegarderDemande(demande);
