@@ -13,7 +13,7 @@ import com.hubertpa.sidepa.model.Service;
 import com.hubertpa.sidepa.service.OrganisationService;
 
 @RestController
-@RequestMapping("/data/service/")
+@RequestMapping("/data/service")
 public class ServiceController {
 
 	Logger logger = LoggerFactory.getLogger(getClass());
@@ -21,7 +21,7 @@ public class ServiceController {
 	@Autowired
 	OrganisationService service;
 
-	@GetMapping(path = "all", produces = "application/json")
+	@GetMapping(path = "", produces = "application/json")
 	List<Service> trouverToutsServices() {
 		return service.recuperationServices();
 	}

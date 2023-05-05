@@ -14,7 +14,7 @@ import com.hubertpa.sidepa.model.RefTypeLigne;
 import com.hubertpa.sidepa.repository.RefTypeLigneRepository;
 
 @RestController
-@RequestMapping("/data/referenitiel/")
+@RequestMapping("/data/")
 public class ReferentielController {
 
 	Logger logger = LoggerFactory.getLogger(getClass());
