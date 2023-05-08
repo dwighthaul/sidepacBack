@@ -104,6 +104,10 @@ public class DataInitializer {
 				"FR7630001007941234567890185", "30001"));
 		tiersRepository.save(new Tiers("12345678902", "Crédit Agricole‎", "",
 				"12, place des États-Unis 92127 Montrouge Cedex", "FR7630006000011234567890189", "30006"));
+		tiersRepository.save(
+				new Tiers("23456789021", "Crédit Lyonnais‎", "", "Adresse", "FR7630006000011234567890190", "30007"));
+		tiersRepository
+				.save(new Tiers("23456789022", "Boursomara", "", "Adresse 2", "FR7630006000011234567890191", "30008"));
 
 	}
 
